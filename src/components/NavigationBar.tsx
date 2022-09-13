@@ -5,21 +5,23 @@ import {
   CalendarIcon,
   ChartBarIcon,
   FolderIcon,
-  HomeIcon,
   InboxIcon,
   UsersIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import { classNames } from "../utils/utils";
-
+import { ReactComponent as HomeIcon } from "../assets/icon-nav-home.svg";
+import { ReactComponent as MoviesIcon } from "../assets/icon-nav-movies.svg";
+import { ReactComponent as SeriesIcon } from "../assets/icon-nav-tv-series.svg";
+import { ReactComponent as BookmarkIcon } from "../assets/icon-nav-bookmark.svg";
 const navigation = [
   { name: "home", href: "/", icon: HomeIcon, current: true },
-  { name: "movies", href: "/movies", icon: UsersIcon, current: false },
-  { name: "series", href: "/series", icon: FolderIcon, current: false },
+  { name: "movies", href: "/movies", icon: MoviesIcon, current: false },
+  { name: "series", href: "/series", icon: SeriesIcon, current: false },
   {
     name: "bookmarked",
     href: "bookmarked",
-    icon: CalendarIcon,
+    icon: BookmarkIcon,
     current: false,
   },
 ];
@@ -27,16 +29,9 @@ const navigation = [
 export default function NavigationBar() {
   return (
     <div className="hidden md:flex md:flex-shrink-0">
-      <div className="flex flex-col w-64">
+      <div className="flex flex-col p-4">
         {/* Sidebar component, swap this element with another sidebar if you like */}
-        <div className="flex-1 flex flex-col min-h-0">
-          <div className="flex items-center h-16 flex-shrink-0 px-4 bg-gray-900">
-            <img
-              className="h-8 w-auto"
-              src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
-              alt="Workflow"
-            />
-          </div>
+        <div className="flex-1 flex flex-col min-h-0 bg-gray-800 rounded-lg">
           <div className="flex-1 flex flex-col overflow-y-auto">
             <nav className="flex-1 px-2 py-4 bg-gray-800 space-y-1">
               {navigation.map((item) => (
@@ -55,11 +50,10 @@ export default function NavigationBar() {
                       item.current
                         ? "text-gray-300"
                         : "text-gray-400 group-hover:text-gray-300",
-                      "mr-3 flex-shrink-0 h-6 w-6"
+                      "flex-shrink-0 h-6 w-6"
                     )}
                     aria-hidden="true"
                   />
-                  {item.name}
                 </a>
               ))}
             </nav>
@@ -69,4 +63,3 @@ export default function NavigationBar() {
     </div>
   );
 }
-
