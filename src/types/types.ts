@@ -1,7 +1,7 @@
 export interface IContentData {
   title: string;
   thumbnail: {
-    trending: {
+    trending?: {
       small: string;
       large: string;
     };
@@ -11,9 +11,9 @@ export interface IContentData {
       large: string;
     };
   };
-  year: 2019;
-  category: "Movie";
-  rating: "PG";
-  isBookmarked: false;
-  isTrending: true;
+  year: number;
+  category: string;
+  rating: string;
+  isBookmarked: boolean;
+  isTrending: boolean;
 }
