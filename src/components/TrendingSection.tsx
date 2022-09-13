@@ -15,12 +15,16 @@ export default function TrendingContent() {
     }
   }, [data, trendingContent]);
   return (
-    <div>
-      <h2 className="text-white mb-4 text-xl font-extralight">Trending</h2>
-      <div className="w-content overflow-x-scroll flex">
-        {trendingContent.map((item, index) => (
-          <TrendingItem item={item} index={index} />
-        ))}
+  //TODO: Scroll horizontal on hover scroll 
+
+    <div className="">
+      <div className="flex flex-col">
+        <h2 className="text-white mb-4 text-3xl font-extralight">Trending</h2>
+        <div className="overflow-x-scroll no-scrollbar h-fit overflow-y-hidden flex flex-grow">
+          {trendingContent.map((item, index) => (
+            <TrendingItem item={item} index={index} />
+          ))}
+        </div>
       </div>
     </div>
   );

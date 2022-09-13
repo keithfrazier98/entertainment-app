@@ -1,6 +1,6 @@
 import { IContentData } from "../types/types";
 import { ReactComponent as MovieIcon } from "../assets/icon-nav-movies.svg";
-import { ReactComponent as Bookmark } from "../assets/icon-nav-bookmark.svg";
+import { ReactComponent as Bookmark } from "../assets/icon-bookmark-empty.svg";
 
 export default function TrendingItem({
   item,
@@ -9,43 +9,36 @@ export default function TrendingItem({
   item: IContentData;
   index: number;
 }) {
-  const getThumbnail = (path?: string) => {
-    if (!path) return "";
-    try {
-        const url = "beyond-earth"
-      const img = require(""+`../assets/thumbnails/beyond-earth/trending/small.jpg`);
-    //   const img = require(`.${path}`).default;
-      return img;
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  //TODO: Bookmark logic
   return (
     <div
       key={`trending_${index}`}
-      className="h-48 w-full flex-grow max-w-md flex justify-between flex-col p-4 rounded-lg relative"
+      className="min-w-[28rem] flex justify-between flex-col mr-8 rounded-lg relative"
     >
-      <div className="absolute right-0 left-0 top-0 bottom-0">
-        <img
-          src={getThumbnail(item.thumbnail.trending?.large)}
-          alt={`${item.title}-cover`}
-        />
-      </div>
-      <div className="w-full flex justify-end">
-        <Bookmark />
-      </div>
-      <div className="text-gray-400 ">
-        <div className="capitalize w-min grid grid-flow-col gap-2 items-center text-xs font-thin">
-          <span>{item.year}</span>
-          <div className="w-1 h-1 rounded-full bg-white" />
-          <div className="flex">
-            <MovieIcon />
-            <span className="ml-1">{item.category}</span>
-          </div>
-          <div className="w-1 h-1 rounded-full bg-white" />
-          <span>{item.rating}</span>
+      <img
+        src={`../thumbnails/${item.thumbnail.trending?.large}`}
+        alt={`${item.title}-cover`}
+        className="rounded-lg w-[28rem] brightness-75"
+      />
+      <div className="absolute left-0 top-0 right-0 bottom-0 z-10 flex justify-between flex-col p-5 text-white">
+        <div className="w-full flex justify-end rounded-md">
+          <button className="w-8 h-8 bg-black bg-opacity-25 flex justify-center items-center rounded-full">
+            <Bookmark className="scale-150 rotate-2" />
+          </button>
         </div>
-        <h5>{item.title}</h5>
+        <div className="text-gray-400 ">
+          <div className="capitalize w-max grid grid-flow-col gap-2 items-center font-thin text-gray-300 text-base">
+            <span>{item.year}</span>
+            <div className="w-1 h-1 rounded-full bg-white" />
+            <div className="flex">
+              <MovieIcon />
+              <span className="ml-1">{item.category}</span>
+            </div>
+            <div className="w-1 h-1 rounded-full bg-white" />
+            <span>{item.rating}</span>
+          </div>
+          <h5 className="text-white text-2xl">{item.title}</h5>
+        </div>
       </div>
     </div>
   );
