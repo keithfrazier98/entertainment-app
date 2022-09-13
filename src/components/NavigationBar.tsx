@@ -23,10 +23,10 @@ export default function NavigationBar() {
     <div className="hidden md:flex md:flex-shrink-0">
       <div className="flex flex-col px-6">
         {/* Sidebar component, swap this element with another sidebar if you like */}
-        <div className="flex-1 flex flex-col min-h-0  p-6 bg-gray-800 rounded-xl">
-          <div className="flex-1 flex flex-col overflow-y-auto items-center py-4  ">
+        <div className="flex-1 flex flex-col min-h-0  py-6 px-5 bg-primary-blue-medium rounded-xl">
+          <div className="flex-1 flex flex-col overflow-y-auto items-center py-2">
             <Logo className={classNames("flex-shrink-0 ")} aria-hidden="true" />
-            <nav className="flex-1 bg-gray-800 space-y-1 rounded-xl mt-14">
+            <nav className="flex-1 space-y-1 rounded-xl mt-14">
               {navigation.map((item) => (
                 <Link key={item.name} to={item.link}>
                   <item.icon

@@ -1,8 +1,7 @@
 import { IContentData } from "../types/types";
-import { ReactComponent as MovieIcon } from "../assets/icon-nav-movies.svg";
-import { ReactComponent as Bookmark } from "../assets/icon-bookmark-empty.svg";
+import {BookmarkEmptyIcon, NavMoviesIcon} from "./IconLibrary"
 
-export default function TrendingItem({
+export default function RowItem({
   item,
   index,
 }: {
@@ -10,6 +9,7 @@ export default function TrendingItem({
   index: number;
 }) {
   //TODO: Bookmark logic
+  //TODO: Tv series OR Movie icon 
   return (
     <div
       key={`trending_${index}`}
@@ -23,7 +23,7 @@ export default function TrendingItem({
       <div className="absolute left-0 top-0 right-0 bottom-0 z-10 flex justify-between flex-col p-5 text-white">
         <div className="w-full flex justify-end rounded-md">
           <button className="w-8 h-8 bg-black bg-opacity-25 flex justify-center items-center rounded-full">
-            <Bookmark className="scale-150 rotate-2" />
+            <BookmarkEmptyIcon className="scale-150 rotate-2" />
           </button>
         </div>
         <div className="text-gray-400 ">
@@ -31,7 +31,7 @@ export default function TrendingItem({
             <span>{item.year}</span>
             <div className="w-1 h-1 rounded-full bg-white" />
             <div className="flex">
-              <MovieIcon />
+              <NavMoviesIcon />
               <span className="ml-1">{item.category}</span>
             </div>
             <div className="w-1 h-1 rounded-full bg-white" />
