@@ -1,26 +1,16 @@
-import { Fragment, useState } from "react";
-import { Dialog, Menu, Transition } from "@headlessui/react";
-import {
-  BellIcon,
-  CalendarIcon,
-  ChartBarIcon,
-  FolderIcon,
-  InboxIcon,
-  UsersIcon,
-  XMarkIcon,
-} from "@heroicons/react/24/outline";
 import { classNames } from "../utils/utils";
 import { ReactComponent as HomeIcon } from "../assets/icon-nav-home.svg";
 import { ReactComponent as MoviesIcon } from "../assets/icon-nav-movies.svg";
 import { ReactComponent as SeriesIcon } from "../assets/icon-nav-tv-series.svg";
 import { ReactComponent as BookmarkIcon } from "../assets/icon-nav-bookmark.svg";
+import { Link } from "react-router-dom";
 const navigation = [
-  { name: "home", href: "/", icon: HomeIcon, current: true },
-  { name: "movies", href: "/movies", icon: MoviesIcon, current: false },
-  { name: "series", href: "/series", icon: SeriesIcon, current: false },
+  { name: "home", link: "/", icon: HomeIcon, current: true },
+  { name: "movies", link: "/movies", icon: MoviesIcon, current: false },
+  { name: "series", link: "/series", icon: SeriesIcon, current: false },
   {
     name: "bookmarked",
-    href: "bookmarked",
+    link: "bookmarked",
     icon: BookmarkIcon,
     current: false,
   },
@@ -35,9 +25,9 @@ export default function NavigationBar() {
           <div className="flex-1 flex flex-col overflow-y-auto">
             <nav className="flex-1 px-2 py-4 bg-gray-800 space-y-1">
               {navigation.map((item) => (
-                <a
+                <Link
                   key={item.name}
-                  href={item.href}
+                  to={item.link}
                   className={classNames(
                     item.current
                       ? "bg-gray-900 text-white"
@@ -54,7 +44,7 @@ export default function NavigationBar() {
                     )}
                     aria-hidden="true"
                   />
-                </a>
+                </Link>
               ))}
             </nav>
           </div>
