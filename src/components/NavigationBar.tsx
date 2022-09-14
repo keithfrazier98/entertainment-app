@@ -1,19 +1,21 @@
 import { classNames } from "../utils/utils";
-import { ReactComponent as HomeIcon } from "../assets/icon-nav-home.svg";
-import { ReactComponent as MoviesIcon } from "../assets/icon-nav-movies.svg";
-import { ReactComponent as SeriesIcon } from "../assets/icon-nav-tv-series.svg";
-import { ReactComponent as BookmarkIcon } from "../assets/icon-nav-bookmark.svg";
+import {
+  NavHomeIcon,
+  NavMoviesIcon,
+  NavTVIcon,
+  NavBookmarkIcon,
+} from "../Icons";
 import { ReactComponent as Logo } from "../assets/logo.svg";
 import avatar from "../assets/image-avatar.png";
 import { Link } from "react-router-dom";
 const navigation = [
-  { name: "home", link: "/", icon: HomeIcon, current: true },
-  { name: "movies", link: "/movies", icon: MoviesIcon, current: false },
-  { name: "series", link: "/series", icon: SeriesIcon, current: false },
+  { name: "home", link: "/", icon: NavHomeIcon, current: true },
+  { name: "movies", link: "/movies", icon: NavMoviesIcon, current: false },
+  { name: "series", link: "/series", icon: NavTVIcon, current: false },
   {
     name: "bookmarked",
     link: "bookmarked",
-    icon: BookmarkIcon,
+    icon: NavBookmarkIcon,
     current: false,
   },
 ];
@@ -32,9 +34,9 @@ export default function NavigationBar() {
                   <item.icon
                     className={classNames(
                       item.current
-                        ? "text-gray-300"
-                        : "hover:bg-primary-red group-hover:text-gray-300",
-                      "flex-shrink-0 mb-9 "
+                        ? "fill-white"
+                        : "fill-primary-blue-light hover:fill-primary-red",
+                      "flex-shrink-0 mb-9 w-4 h-4"
                     )}
                     aria-hidden="true"
                   />

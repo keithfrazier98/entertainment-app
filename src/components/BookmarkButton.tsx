@@ -2,7 +2,9 @@ import { useContext } from "react";
 import { IContentData } from "../types/types";
 import { classNames } from "../utils/utils";
 import { GlobalContext } from "./GlobalContext";
-import { BookmarkEmptyIcon, BookmarkFullIcon } from "./IconLibrary";
+import { BookmarkEmptyIcon, BookmarkFullIcon } from "../Icons";
+import { BookmarkIcon } from "@heroicons/react/24/outline";
+import { BookmarkIcon as BookmarkSolid } from "@heroicons/react/20/solid";
 
 export default function BookmarkButton({ item }: { item: IContentData }) {
   const { dispatch } = useContext(GlobalContext);
@@ -19,9 +21,9 @@ export default function BookmarkButton({ item }: { item: IContentData }) {
       )}
     >
       {item.isBookmarked ? (
-        <BookmarkFullIcon className="scale-150 group-hover:invert" />
+        <BookmarkSolid className=" w-5 h-5 fill-white group-hover:invert" />
       ) : (
-        <BookmarkEmptyIcon className="scale-150 rotate-2 group-hover:invert" />
+        <BookmarkIcon className=" w-5 h-5 stroke-white group-hover:invert" />
       )}
     </button>
     // </div>

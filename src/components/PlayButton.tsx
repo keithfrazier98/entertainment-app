@@ -1,5 +1,5 @@
 import { classNames } from "../utils/utils";
-import { PlayIcon } from "./IconLibrary";
+import { PlayIcon } from "../Icons";
 
 export default function PlayButton() {
   return (
@@ -10,7 +10,7 @@ export default function PlayButton() {
       )}
     >
       <div className="bg-white bg-opacity-25 rounded-full pl-3 py-3 flex text-white items-center">
-        <PlayIcon className="scale-150" />
+        <PlayIcon className="w-6 h-6 scale-150 fill-white" />
         <p className="mx-6 text-lg">Play</p>
       </div>
     </div>

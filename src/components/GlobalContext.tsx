@@ -14,6 +14,11 @@ function dataReducer(state: IContentData[], newItem: IContentData) {
   });
 }
 
+// export const light_blue = "#5A698F";
+// export const medium_blue = "#161D2F";
+// export const dark_blue = "#10141E";
+// export const red = "#FC4747";
+
 export const GlobalContext = createContext({} as IDataContext);
 
 export const GlobalProvider = ({

@@ -1,10 +1,7 @@
+import { NavMoviesIcon } from "../Icons";
 import { IContentData } from "../types/types";
 import BookmarkButton from "./BookmarkButton";
-import {
-  BookmarkEmptyIcon,
-  BookmarkFullIcon,
-  NavMoviesIcon,
-} from "./IconLibrary";
+
 import PlayButton from "./PlayButton";
 export default function GridItem({
   item,
@@ -37,7 +34,7 @@ export default function GridItem({
           <span>{item.year}</span>
           <div className="w-1 h-1 rounded-full bg-white" />
           <div className="flex">
-            <NavMoviesIcon />
+            <NavMoviesIcon className="w-4 h-4 text-blue-400" />
             <span className="ml-1">{item.category}</span>
           </div>
           <div className="w-1 h-1 rounded-full bg-white" />

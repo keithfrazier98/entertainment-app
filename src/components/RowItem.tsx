@@ -1,7 +1,12 @@
 import { IContentData } from "../types/types";
 import { classNames } from "../utils/utils";
 import BookmarkButton from "./BookmarkButton";
-import { BookmarkEmptyIcon, NavMoviesIcon, PlayIcon } from "./IconLibrary";
+import {
+  BookmarkEmptyIcon,
+  NavMoviesIcon,
+  NavTVIcon,
+  PlayIcon,
+} from "../Icons";
 import PlayButton from "./PlayButton";
 
 export default function RowItem({
@@ -13,7 +18,7 @@ export default function RowItem({
 }) {
   //TODO: Bookmark logic
   //TODO: Tv series OR Movie icon
-  
+
   return (
     <div
       key={`trending_${index}`}
@@ -42,8 +47,12 @@ export default function RowItem({
           <div className="capitalize w-max grid grid-flow-col gap-2 items-center font-thin text-gray-300 text-base">
             <span>{item.year}</span>
             <div className="w-1 h-1 rounded-full bg-white" />
-            <div className="flex">
-              <NavMoviesIcon />
+            <div className="flex items-center">
+              {item.category === "Movie" ? (
+                <NavMoviesIcon className="w-4 h-4 fill-gray-300" />
+              ) : (
+                <NavTVIcon className="w-4 h-4 fill-gray-300" />
+              )}
               <span className="ml-1">{item.category}</span>
             </div>
             <div className="w-1 h-1 rounded-full bg-white" />
