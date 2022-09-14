@@ -1,6 +1,7 @@
 import {
   Dispatch,
   SetStateAction,
+  useCallback,
   useContext,
   useEffect,
   useState,
@@ -23,10 +24,17 @@ export default function useFilterContent(
 
   const location = useLocation();
 
+  // const callback = useCallback(filter, [])
+
   useEffect(() => {
     setSelection([...data.filter(filter)]);
-    //the location in dep array is a workaround for a infinate 
-    //render bug when having the filter in the dep array
+    /**
+     * the location in dep array is a workaround for a infinate
+     * render bug when having the filter in the dep array
+     *
+     * useCallback cant work because the conditional in the filter
+     * is what needs to trigger a rerender
+     */
   }, [data, location.pathname]);
 
   return [selection, setSelection];
