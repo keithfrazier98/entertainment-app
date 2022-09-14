@@ -13,6 +13,7 @@ export default function App() {
             path="/movies"
             element={
               <FilterSection
+                placeholder="Search for movies"
                 filter={(item) => item.category === "Movie"}
                 title="Movies"
               />
@@ -22,6 +23,7 @@ export default function App() {
             path="/series"
             element={
               <FilterSection
+                placeholder="Search for TV Series"
                 filter={(item) => item.category === "TV Series"}
                 title="TV Series"
               />
@@ -32,6 +34,7 @@ export default function App() {
             element={
               <div className="flex flex-col w-full h-full">
                 <FilterSection
+                  placeholder="Search for bookmarked shows"
                   filter={(item) =>
                     item.isBookmarked && item.category === "Movie"
                   }

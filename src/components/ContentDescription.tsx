@@ -13,7 +13,7 @@ export default function ContentDescription({
     <>
       <div
         className={classNames(
-          textSize === "lg" ? "text-base" : "text-sm",
+          textSize === "lg" ? "text-xs" : "text-xs",
           "items-center font-thin text-gray-300",
           "capitalize w-max grid grid-flow-col gap-2"
         )}
@@ -33,7 +33,7 @@ export default function ContentDescription({
       </div>
       <h5
         className={classNames(
-          textSize === "lg" ? "text-2xl" : "text-lg",
+          textSize === "lg" ? "text-xl" : "text-sm",
           "text-white "
         )}
       >
