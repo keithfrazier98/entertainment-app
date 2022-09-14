@@ -1,4 +1,3 @@
-import { NavMoviesIcon } from "../Icons";
 import { IContentData } from "../types/types";
 import BookmarkButton from "./BookmarkButton";
 import ContentDescription from "./ContentDescription";

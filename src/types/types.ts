@@ -1,4 +1,10 @@
-import { Dispatch, SetStateAction } from "react";
+export interface INavItem {
+  name: string;
+  link: string;
+  icon: ({ className }: { className?: string | undefined }) => JSX.Element;
+  className?: string;
+  current: boolean;
+}
 
 export interface IContentData {
   title: string;
