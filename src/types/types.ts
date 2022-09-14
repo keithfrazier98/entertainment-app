@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction } from "react";
+
 export interface IContentData {
   title: string;
   thumbnail: {
@@ -16,4 +18,9 @@ export interface IContentData {
   rating: string;
   isBookmarked: boolean;
   isTrending: boolean;
+}
+
+export interface IDataContext {
+  data: IContentData[];
+  setData: Dispatch<SetStateAction<IContentData[]>>;
 }

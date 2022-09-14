@@ -26,8 +26,7 @@ export default function GridItem({
         className="rounded-lg brightness-75"
       />
       <div className="absolute left-0 top-0 right-0 bottom-0 z-10 flex justify-between flex-col p-5 text-white">
-          <BookmarkButton item={item} />
-        
+        <BookmarkButton item={item} index={index} />
       </div>
       <div className="text-gray-400  mt-2">
         <div className="capitalize w-max grid grid-flow-col gap-2 items-center font-thin text-gray-300 text-sm">

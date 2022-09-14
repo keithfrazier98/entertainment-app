@@ -13,10 +13,12 @@ export default function RowContent({
     //TODO: Scroll horizontal on hover scroll
     //TODO: "Play" on title hover
     <section className="flex flex-col">
-      <h2 className="text-white mb-6 text-3xl font-extralight capitalize">{title}</h2>
+      <h2 className="text-white mb-6 text-3xl font-extralight capitalize">
+        {title}
+      </h2>
       <div className="overflow-x-scroll no-scrollbar h-fit overflow-y-hidden flex flex-grow">
         {content.map((item, index) => (
-          <RowItem item={item} index={index} />
+          <RowItem key={"row_item" + index} item={item} index={index} />
         ))}
       </div>
     </section>
