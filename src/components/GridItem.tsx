@@ -1,6 +1,7 @@
 import { NavMoviesIcon } from "../Icons";
 import { IContentData } from "../types/types";
 import BookmarkButton from "./BookmarkButton";
+import ContentDescription from "./ContentDescription";
 
 import PlayButton from "./PlayButton";
 export default function GridItem({
@@ -30,17 +31,7 @@ export default function GridItem({
         <BookmarkButton item={item} />
       </div>
       <div className="text-gray-400 mt-2">
-        <div className="capitalize w-max grid grid-flow-col gap-2 items-center font-thin text-gray-300 text-sm">
-          <span>{item.year}</span>
-          <div className="w-1 h-1 rounded-full bg-white" />
-          <div className="flex">
-            <NavMoviesIcon className="w-4 h-4 text-blue-400" />
-            <span className="ml-1">{item.category}</span>
-          </div>
-          <div className="w-1 h-1 rounded-full bg-white" />
-          <span>{item.rating}</span>
-        </div>
-        <h5 className="text-white text-xl">{item.title}</h5>
+        <ContentDescription item={item} textSize="sm" />
       </div>
     </div>
   );

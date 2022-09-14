@@ -8,6 +8,7 @@ import {
   PlayIcon,
 } from "../Icons";
 import PlayButton from "./PlayButton";
+import ContentDescription from "./ContentDescription";
 
 export default function RowItem({
   item,
@@ -42,24 +43,8 @@ export default function RowItem({
         </div>
       </div>
 
-      <div className="absolute left-5 bottom-5 z-10 flex justify-between flex-col text-white">
-        <div className="text-gray-400 ">
-          <div className="capitalize w-max grid grid-flow-col gap-2 items-center font-thin text-gray-300 text-base">
-            <span>{item.year}</span>
-            <div className="w-1 h-1 rounded-full bg-white" />
-            <div className="flex items-center">
-              {item.category === "Movie" ? (
-                <NavMoviesIcon className="w-4 h-4 fill-gray-300" />
-              ) : (
-                <NavTVIcon className="w-4 h-4 fill-gray-300" />
-              )}
-              <span className="ml-1">{item.category}</span>
-            </div>
-            <div className="w-1 h-1 rounded-full bg-white" />
-            <span>{item.rating}</span>
-          </div>
-          <h5 className="text-white text-2xl">{item.title}</h5>
-        </div>
+      <div className="absolute left-5 bottom-5 z-10 flex justify-between flex-col text-gray-400">
+        <ContentDescription item={item} textSize="lg"/>
       </div>
     </div>
   );
