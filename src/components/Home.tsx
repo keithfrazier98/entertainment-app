@@ -9,7 +9,7 @@ export default function Home() {
   const [recommendedContent] = useFilterContent((item) => !item.isTrending);
 
   return (
-    <div className="flex flex-col w-0 flex-1 overflow-hidden no-scrollbar ">
+    <div className="flex flex-col px-6   flex-1 overflow-hidden no-scrollbar ">
       <SearchBar data={data} placeholder="Search for movies or TV series" />
       <main className="flex-1 relative overflow-y-auto focus:outline-none  no-scrollbar">
         <div className="mt-1 no-scrollbar">

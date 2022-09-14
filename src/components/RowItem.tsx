@@ -23,14 +23,14 @@ export default function RowItem({
   return (
     <div
       key={`trending_${index}`}
-      className="min-w-[28rem] flex justify-between flex-col mr-8 rounded-lg relative"
+      className="min-w-[22rem] flex justify-between flex-col mr-8 rounded-lg relative"
     >
       <button className="group">
         <img
           src={`../thumbnails/${item.thumbnail.trending?.large}`}
           alt={`${item.title}-cover`}
           className={classNames(
-            "rounded-lg w-[28rem] group-hover:brightness-50 brightness-75 transition-all"
+            "rounded-lg w-[22rem] group-hover:brightness-50 brightness-75 transition-all"
           )}
         />
         <PlayButton />

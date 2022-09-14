@@ -10,7 +10,7 @@ export default function SearchBar({
 }) {
   return (
     <div className="relative z-10 flex-shrink-0 flex h-16 shadow">
-      <div className="flex-1 px-4 flex justify-between">
+      <div className="flex-1  flex justify-between">
         <div className="flex-1 flex">
           <form className="w-full flex md:ml-0 " action="#" method="GET">
             <label htmlFor="search-field" className="sr-only">

@@ -13,7 +13,7 @@ export default function RowContent({
     //TODO: Scroll horizontal on hover scroll
     //TODO: "Play" on title hover
     <section className="flex flex-col">
-      <h2 className="text-white mb-6 text-3xl font-extralight capitalize">
+      <h2 className="text-white mb-4 text-2xl font-extralight capitalize">
         {title}
       </h2>
       <div className="overflow-x-scroll no-scrollbar h-fit overflow-y-hidden flex flex-grow">

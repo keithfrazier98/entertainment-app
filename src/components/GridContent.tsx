@@ -12,7 +12,7 @@ export default function GridContent({
   return (
     <div>
       <section className="flex flex-col">
-        <h2 className="text-white mb-4 text-3xl font-extralight">{title}</h2>
+        <h2 className="text-white mb-4 text-2xl font-extralight">{title}</h2>
         <div
           className={classNames(
             "overflow-x-scroll no-scrollbar h-fit overflow-y-hidden grid grid-flow-row gap-6",
