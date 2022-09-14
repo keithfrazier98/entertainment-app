@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-import useFilterContent from "../hooks/useFilterContent";
 import { IContentData } from "../types/types";
 import { classNames } from "../utils/utils";
 import GridItem from "./GridItem";

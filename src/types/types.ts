@@ -6,6 +6,8 @@ export interface INavItem {
   current: boolean;
 }
 
+export type FilterFunction = (item: IContentData) => boolean
+
 export interface IContentData {
   title: string;
   thumbnail: {

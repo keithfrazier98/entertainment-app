@@ -6,7 +6,7 @@ import {
   useState,
 } from "react";
 import { GlobalContext } from "../components/GlobalContext";
-import { IContentData } from "../types/types";
+import { FilterFunction, IContentData } from "../types/types";
 import _data from "../utils/data.json";
 
 /**
@@ -15,7 +15,7 @@ import _data from "../utils/data.json";
  * @returns
  */
 export default function useFilterContent(
-  filter: (item: IContentData) => boolean = () => true
+  filter: FilterFunction = () => true
 ): [IContentData[], Dispatch<SetStateAction<IContentData[]>>] {
   const { data } = useContext(GlobalContext);
   const [selection, setSelection] = useState<IContentData[]>([]);

@@ -1,7 +1,13 @@
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import { IContentData } from "../types/types";
 
-export default function SearchBar({ data }: { data: IContentData[] }) {
+export default function SearchBar({
+  data,
+  placeholder,
+}: {
+  data: IContentData[];
+  placeholder:string;
+}) {
   return (
     <div className="relative z-10 flex-shrink-0 flex h-16 shadow">
       <div className="flex-1 px-4 flex justify-between">
@@ -20,7 +26,7 @@ export default function SearchBar({ data }: { data: IContentData[] }) {
               <input
                 id="search-field"
                 className="block font-thin bg-transparent w-full h-full pl-8 pr-3 py-2 border-transparent text-gray-900 placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-0 focus:border-transparent text-base"
-                placeholder="Search for movies or TV series"
+                placeholder={placeholder}
                 type="search"
                 name="search"
               />
