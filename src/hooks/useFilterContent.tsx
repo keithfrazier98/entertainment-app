@@ -19,10 +19,11 @@ export default function useFilterContent(
 ): [IContentData[], Dispatch<SetStateAction<IContentData[]>>] {
   const { data } = useContext(GlobalContext);
   const [selection, setSelection] = useState<IContentData[]>([]);
+console.log("yo");
 
   useEffect(() => {
     setSelection([...data.filter(filter)]);
-  }, [data]);
+  }, [data, filter]);
 
   return [selection, setSelection];
 }

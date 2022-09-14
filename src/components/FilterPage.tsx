@@ -3,7 +3,7 @@ import GridContent from "./GridContent";
 import useFilterContent from "../hooks/useFilterContent";
 import { FilterFunction } from "../types/types";
 
-export default function CategoryPage({
+export default function FilterPage({
   title,
   filter,
 }: {
@@ -19,7 +19,7 @@ export default function CategoryPage({
         <div className="mt-1 no-scrollbar">
           <div className="max-w-7xl mx-auto pl-4 no-scrollbar">
             <div className="mt-5">
-              <GridContent title="Recommended for you" content={category} />
+              <GridContent title={title} content={category} />
             </div>
           </div>
         </div>{" "}

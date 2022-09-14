@@ -1,7 +1,7 @@
 import NavigationBar from "./components/NavigationBar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
-import CategoryPage from "./components/CategoryPage";
+import FilterPage from "./components/FilterPage";
 export default function App() {
   return (
     <div className="h-screen flex overflow-hidden py-6">
@@ -12,7 +12,7 @@ export default function App() {
           <Route
             path="/movies"
             element={
-              <CategoryPage
+              <FilterPage
                 filter={(item) => item.category === "Movie"}
                 title="Movies"
               />
@@ -21,7 +21,7 @@ export default function App() {
           <Route
             path="/series"
             element={
-              <CategoryPage
+              <FilterPage
                 filter={(item) => item.category === "TV Series"}
                 title="TV Series"
               />
@@ -30,7 +30,7 @@ export default function App() {
           <Route
             path="/bookmarked"
             element={
-              <CategoryPage
+              <FilterPage
                 filter={(item) => item.isBookmarked}
                 title="Bookmarked"
               />
