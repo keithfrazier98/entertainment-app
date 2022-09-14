@@ -5,6 +5,7 @@ import {
   useEffect,
   useState,
 } from "react";
+import { useLocation } from "react-router-dom";
 import { GlobalContext } from "../components/GlobalContext";
 import { FilterFunction, IContentData } from "../types/types";
 import _data from "../utils/data.json";
@@ -19,11 +20,14 @@ export default function useFilterContent(
 ): [IContentData[], Dispatch<SetStateAction<IContentData[]>>] {
   const { data } = useContext(GlobalContext);
   const [selection, setSelection] = useState<IContentData[]>([]);
-console.log("yo");
+
+  const location = useLocation();
 
   useEffect(() => {
     setSelection([...data.filter(filter)]);
-  }, [data, filter]);
+    //the location in dep array is a workaround for a infinate 
+    //render bug when having the filter in the dep array
+  }, [data, location.pathname]);
 
   return [selection, setSelection];
 }
