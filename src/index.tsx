@@ -3,7 +3,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import ReactDOMClient from "react-dom/client";
-import { GlobalProvider } from "./components/DataContext";
+import { GlobalProvider } from "./components/GlobalContext";
 
 const container = document.getElementById("root");
 // const container = body?.appendChild(document.createElement("div"))

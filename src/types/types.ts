@@ -22,5 +22,5 @@ export interface IContentData {
 
 export interface IDataContext {
   data: IContentData[];
-  setData: Dispatch<SetStateAction<IContentData[]>>;
+  dispatch: React.Dispatch<IContentData>;
 }

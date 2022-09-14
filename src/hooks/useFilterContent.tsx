@@ -5,7 +5,7 @@ import {
   useEffect,
   useState,
 } from "react";
-import { GlobalContext } from "../components/DataContext";
+import { GlobalContext } from "../components/GlobalContext";
 import { IContentData } from "../types/types";
 import _data from "../utils/data.json";
 

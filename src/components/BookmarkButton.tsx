@@ -1,21 +1,18 @@
+import { useContext } from "react";
 import { IContentData } from "../types/types";
 import { classNames } from "../utils/utils";
+import { GlobalContext } from "./GlobalContext";
 import { BookmarkEmptyIcon, BookmarkFullIcon } from "./IconLibrary";
 
-export default function BookmarkButton({
-  item,
-  index,
-}: {
-  item: IContentData;
-  index: number;
-}) {
-  function clickHandler(index: number) {
-    // const data
+export default function BookmarkButton({ item }: { item: IContentData }) {
+  const { dispatch } = useContext(GlobalContext);
+  function clickHandler() {
+    dispatch({ ...item, isBookmarked: !item.isBookmarked });
   }
   return (
     // <div className="w-full flex justify-end rounded-md group">
     <button
-      onClick={() => clickHandler(index)}
+      onClick={clickHandler}
       className={classNames(
         "w-8 h-8 bg-black hover:bg-white group",
         "bg-opacity-25 flex justify-center items-center rounded-full"
