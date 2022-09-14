@@ -13,6 +13,7 @@ export default function RowItem({
 }) {
   //TODO: Bookmark logic
   //TODO: Tv series OR Movie icon
+  
   return (
     <div
       key={`trending_${index}`}

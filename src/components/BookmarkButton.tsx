@@ -19,7 +19,7 @@ export default function BookmarkButton({ item }: { item: IContentData }) {
       )}
     >
       {item.isBookmarked ? (
-        <BookmarkFullIcon className="scale-150" />
+        <BookmarkFullIcon className="scale-150 group-hover:invert" />
       ) : (
         <BookmarkEmptyIcon className="scale-150 rotate-2 group-hover:invert" />
       )}
