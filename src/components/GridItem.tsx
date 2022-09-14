@@ -5,6 +5,7 @@ import {
   BookmarkFullIcon,
   NavMoviesIcon,
 } from "./IconLibrary";
+import PlayButton from "./PlayButton";
 export default function GridItem({
   item,
   index,
@@ -20,15 +21,18 @@ export default function GridItem({
       key={`trending_${index}`}
       className="flex justify-between flex-col mr-8 rounded-lg relative"
     >
-      <img
-        src={`../thumbnails/${item.thumbnail.regular?.small}`}
-        alt={`${item.title}-cover`}
-        className="rounded-lg brightness-75"
-      />
+      <button className="group relative">
+        <img
+          src={`../thumbnails/${item.thumbnail.regular?.small}`}
+          alt={`${item.title}-cover`}
+          className="rounded-lg brightness-75 group-hover:brightness-50"
+        />
+        <PlayButton />
+      </button>
       <div className="absolute top-5 right-5 z-10 flex justify-between flex-col text-white">
-        <BookmarkButton item={item}/>
+        <BookmarkButton item={item} />
       </div>
-      <div className="text-gray-400  mt-2">
+      <div className="text-gray-400 mt-2">
         <div className="capitalize w-max grid grid-flow-col gap-2 items-center font-thin text-gray-300 text-sm">
           <span>{item.year}</span>
           <div className="w-1 h-1 rounded-full bg-white" />
