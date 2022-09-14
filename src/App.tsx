@@ -30,10 +30,20 @@ export default function App() {
           <Route
             path="/bookmarked"
             element={
-              <FilterPage
-                filter={(item) => item.isBookmarked}
-                title="Bookmarked"
-              />
+              <div className="flex flex-col w-full h-full">
+                <FilterPage
+                  filter={(item) =>
+                    item.isBookmarked && item.category === "Movie"
+                  }
+                  title="Bookmarked Movies"
+                />{" "}
+                <FilterPage
+                  filter={(item) =>
+                    item.isBookmarked && item.category === "TV Series"
+                  }
+                  title="Bookmarked TV Series"
+                />
+              </div>
             }
           />
         </Routes>

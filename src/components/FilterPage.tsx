@@ -13,7 +13,7 @@ export default function FilterPage({
   const [category] = useFilterContent(filter);
 
   return (
-    <div className="flex flex-col w-0 flex-1 overflow-hidden no-scrollbar ">
+    <div className="flex flex-col flex-1 overflow-hidden no-scrollbar ">
       <SearchBar data={category} placeholder="Search for movies" />
       <main className="flex-1 relative overflow-y-auto focus:outline-none  no-scrollbar">
         <div className="mt-1 no-scrollbar">
