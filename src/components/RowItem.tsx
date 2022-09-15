@@ -9,19 +9,27 @@ import {
 } from "../Icons";
 import PlayButton from "./PlayButton";
 import ContentDescription from "./ContentDescription";
+import { VisibilityContext } from "react-horizontal-scrolling-menu";
+import { useContext } from "react";
 
 export default function RowItem({
   item,
   index,
+  itemId,
 }: {
   item: IContentData;
   index: number;
+  itemId: string;
 }) {
   //TODO: Bookmark logic
   //TODO: Tv series OR Movie icon
+  const visibility = useContext(VisibilityContext);
+
+  const visible = visibility.isItemVisible(itemId);
 
   return (
     <div
+      id={itemId}
       key={`trending_${index}`}
       className="min-w-[16rem] lg:min-w-[22rem] flex justify-between flex-col mr-8 rounded-lg relative"
     >

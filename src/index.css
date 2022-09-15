@@ -7,13 +7,14 @@ html {
   @apply bg-primary-blue-dark font-outfit no-scrollbar;
 }
 
-.no-scrollbar {
+.no-scrollbar,
+.react-horizontal-scrolling-menu--scroll-container {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
 
 .no-scrollbar::-webkit-scrollbar-track,
-.no-scrollbar::-webkit-scrollbar {
+.no-scrollbar::-webkit-scrollbar,
+.react-horizontal-scrolling-menu--scroll-container::-webkit-scrollbar {
   display: none; /* Safari and Chrome */
 }
-
