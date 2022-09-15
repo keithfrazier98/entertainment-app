@@ -23,9 +23,9 @@ export default function RowItem({
 }) {
   //TODO: Bookmark logic
   //TODO: Tv series OR Movie icon
-  const visibility = useContext(VisibilityContext);
+  // const visibility = useContext(VisibilityContext);
 
-  const visible = visibility.isItemVisible(itemId);
+  // const visible = visibility.isItemVisible(itemId);
 
   return (
     <div

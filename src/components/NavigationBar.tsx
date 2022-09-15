@@ -3,7 +3,10 @@ import { NavHomeIcon, NavMoviesIcon, NavTVIcon } from "../Icons";
 import { ReactComponent as Logo } from "../assets/logo.svg";
 import avatar from "../assets/image-avatar.png";
 import { Link } from "react-router-dom";
-import { BookmarkIcon } from "@heroicons/react/20/solid";
+import {
+  ArrowLeftOnRectangleIcon,
+  BookmarkIcon,
+} from "@heroicons/react/20/solid";
 import { useContext, useReducer } from "react";
 import { GlobalContext } from "./GlobalContext";
 import { INavItem } from "../types/types";
@@ -11,8 +14,8 @@ import { INavItem } from "../types/types";
 export default function NavigationBar() {
   const initialNav = [
     { name: "home", link: "/", icon: NavHomeIcon, current: true },
-    { name: "movies", link: "/movies", icon: NavMoviesIcon, current: false },
-    { name: "series", link: "/series", icon: NavTVIcon, current: false },
+    { name: "movies", link: "movies", icon: NavMoviesIcon, current: false },
+    { name: "series", link: "series", icon: NavTVIcon, current: false },
     {
       name: "bookmarked",
       link: "bookmarked",
@@ -75,10 +78,13 @@ export default function NavigationBar() {
               </Link>
             ))}
           </nav>
-          <div className="w-9 h-9">
+          <div className="text-xs flex flex-col items-center ">
             <div className="bg-white p-[.1rem] rounded-full w-fit">
               <img src={avatar} className="w-9 h-9" />
             </div>
+            <a href="/login" className="flex mt-2 text-gray-400  hover:text-white">
+              <ArrowLeftOnRectangleIcon className="w-4 h-4" /> Logout
+            </a>
           </div>
         </div>
       </div>

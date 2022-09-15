@@ -57,8 +57,8 @@ export default function RowContent({
   return (
     //TODO: Scroll horizontal on hover scroll
     <section
-      onMouseEnter={disableScroll}
-      onMouseLeave={enableScroll}
+      // onMouseEnter={disableScroll}
+      // onMouseLeave={enableScroll}
       className="flex flex-col"
     >
       <h2 className="text-white mb-4 text-2xl font-extralight capitalize">
