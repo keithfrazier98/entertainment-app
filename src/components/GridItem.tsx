@@ -10,13 +10,12 @@ export default function GridItem({
   item: IContentData;
   index: number;
 }) {
-
   return (
     <div
       key={`trending_${index}`}
       className="flex min-w-[10rem] justify-between flex-col mb-4 mr-8 rounded-lg w-fit relative"
     >
-      <button className="group">
+      <button aria-label={"grid item " + item.title} className="group">
         <img
           src={`../thumbnails/${item.thumbnail.regular?.small}`}
           alt={`${item.title}-cover`}

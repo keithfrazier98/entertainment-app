@@ -33,7 +33,7 @@ export default function RowItem({
       key={`trending_${index}`}
       className="min-w-[16rem] lg:min-w-[22rem] flex justify-between flex-col mr-8 rounded-lg relative"
     >
-      <button className="group">
+      <button aria-label={"row item " + item.title} className="group">
         <img
           src={`../thumbnails/${item.thumbnail.trending?.large}`}
           alt={`${item.title}-cover`}

@@ -17,6 +17,7 @@ export default function BookmarkButton({ item }: { item: IContentData }) {
   return (
     // <div className="w-full flex justify-end rounded-md group">
     <button
+      aria-label={"Bookmark-" + item.title}
       onClick={clickHandler}
       className={classNames(
         "w-8 h-8 bg-black hover:bg-white group",

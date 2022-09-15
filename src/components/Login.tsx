@@ -70,17 +70,18 @@ export default function Login() {
                     autoComplete="current-password"
                     placeholder="Repeat Password"
                     className="appearance-none focus:border-white placeholder:text-gray-500 caret-primary-red bg-transparent font-light block w-full px-3 py-2 border-b border-primary-blue-light shadow-sm placeholder-gray-400 focus:outline-none  sm:text-sm"
-                    />
+                  />
                 </div>
               </div>
             )}
 
             <div>
               <button
+                aria-label={"Submit"}
                 type="submit"
                 className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-light text-white bg-primary-red hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-red"
               >
-                {loggingIn? "Log into you account": "Create an account"}
+                {loggingIn ? "Log into you account" : "Create an account"}
               </button>
             </div>
 
@@ -91,6 +92,7 @@ export default function Login() {
                   : "Already have an account?"}
               </p>
               <button
+                aria-label={loggingIn ? "Sign Up" : "Login"}
                 type="button"
                 onClick={() => {
                   setLogginIn(!loggingIn);
