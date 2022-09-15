@@ -12,7 +12,7 @@ export default function PlayButton({ className }: { className?: string }) {
     >
       <span className="bg-white bg-opacity-25 rounded-full pl-3 py-3 flex text-white items-center">
         <PlayIcon className="lg:w-6 lg:h-6 w-8 h-8 lg:scale-150 fill-white" />
-        <p className="mx-8 text-lg">Play</p>
+        <span className="mx-8 text-lg">Play</span>
       </span>
     </span>
   );
