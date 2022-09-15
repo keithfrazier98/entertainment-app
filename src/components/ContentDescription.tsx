@@ -4,16 +4,16 @@ import { classNames } from "../utils/utils";
 
 export default function ContentDescription({
   item,
-  textSize,
+  size,
 }: {
   item: IContentData;
-  textSize: "sm" | "lg";
+  size: "sm" | "lg";
 }) {
   return (
     <>
       <div
         className={classNames(
-          textSize === "lg" ? "text-xs" : "text-xs",
+          size === "lg" ? "text-xs" : "text-xs",
           "items-center font-thin text-gray-300",
           "capitalize w-max grid grid-flow-col gap-2"
         )}
@@ -22,9 +22,9 @@ export default function ContentDescription({
         <div className="w-1 h-1 rounded-full bg-white" />
         <div className="flex items-center">
           {item.category === "Movie" ? (
-            <NavMoviesIcon className="w-4 h-4 fill-gray-300" />
+            <NavMoviesIcon className="lg:w-4 lg:h-4 w-5 h-5 fill-gray-300 scale-75" />
           ) : (
-            <NavTVIcon className="w-4 h-4 fill-gray-300" />
+            <NavTVIcon className="lg:w-4 lg:h-4 w-5 h-5 fill-gray-300 scale-75" />
           )}
           <span className="ml-1">{item.category}</span>
         </div>
@@ -33,7 +33,7 @@ export default function ContentDescription({
       </div>
       <h5
         className={classNames(
-          textSize === "lg" ? "text-xl" : "text-sm",
+          size === "lg" ? "text-xl" : "text-sm",
           "text-white "
         )}
       >

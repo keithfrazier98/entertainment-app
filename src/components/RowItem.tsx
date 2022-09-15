@@ -51,7 +51,7 @@ export default function RowItem({
       </div>
 
       <div className="absolute left-4 bottom-3 z-10 flex justify-between flex-col text-gray-400">
-        <ContentDescription item={item} textSize="lg" />
+        <ContentDescription item={item} size="lg" />
       </div>
     </div>
   );

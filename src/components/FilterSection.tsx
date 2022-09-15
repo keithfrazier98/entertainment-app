@@ -2,22 +2,30 @@ import SearchBar from "./SearchBar";
 import GridContent from "./GridContent";
 import useFilterContent from "../hooks/useFilterContent";
 import { FilterFunction } from "../types/types";
+import { GlobalContext } from "./GlobalContext";
+import { useContext } from "react";
 
 export default function FilterSection({
   title,
   placeholder,
   filter,
+  searchFilter = () => true,
 }: {
   title: string;
   placeholder?: string;
   filter: FilterFunction;
+  searchFilter?: FilterFunction;
 }) {
   const [category] = useFilterContent(filter);
-
+  const { dispatch } = useContext(GlobalContext);
   return (
     <div className="flex flex-col flex-1 overflow-hidden no-scrollbar px-4 lg:px-6">
       {placeholder ? (
-        <SearchBar data={category} placeholder={placeholder} />
+        <SearchBar
+          filter={searchFilter}
+          dispatch={dispatch}
+          placeholder={placeholder}
+        />
       ) : (
         <></>
       )}

@@ -9,7 +9,10 @@ import { BookmarkIcon as BookmarkSolid } from "@heroicons/react/20/solid";
 export default function BookmarkButton({ item }: { item: IContentData }) {
   const { dispatch } = useContext(GlobalContext);
   function clickHandler() {
-    dispatch({ ...item, isBookmarked: !item.isBookmarked });
+    dispatch({
+      type: "updateItem",
+      newItem: { ...item, isBookmarked: !item.isBookmarked },
+    });
   }
   return (
     // <div className="w-full flex justify-end rounded-md group">

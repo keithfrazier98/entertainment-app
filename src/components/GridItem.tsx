@@ -10,13 +10,11 @@ export default function GridItem({
   item: IContentData;
   index: number;
 }) {
-  //TODO: Bookmark logic
-  //TODO: Tv series OR Movie icon
 
   return (
     <div
       key={`trending_${index}`}
-      className="flex min-w-[10rem] justify-between flex-col mr-8 rounded-lg w-fit relative"
+      className="flex min-w-[10rem] justify-between flex-col mb-4 mr-8 rounded-lg w-fit relative"
     >
       <button className="group">
         <img
@@ -31,7 +29,7 @@ export default function GridItem({
         <BookmarkButton item={item} />
       </div>
       <div className="text-gray-400 mt-2">
-        <ContentDescription item={item} textSize="sm" />
+        <ContentDescription item={item} size="sm" />
       </div>
     </div>
   );

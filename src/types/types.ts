@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction } from "react";
+
 export interface INavItem {
   name: string;
   link: string;
@@ -6,7 +8,12 @@ export interface INavItem {
   current: boolean;
 }
 
-export type FilterFunction = (item: IContentData) => boolean
+export type FilterFunction = (item: IContentData) => boolean;
+export type DataDispatch = Dispatch<{
+  type: "updateItem" | "filter";
+  filter?: FilterFunction;
+  newItem?: IContentData;
+}>;
 
 export interface IContentData {
   title: string;
@@ -30,5 +37,7 @@ export interface IContentData {
 
 export interface IDataContext {
   data: IContentData[];
-  dispatch: React.Dispatch<IContentData>;
+  dispatch: DataDispatch;
+  searchInput: string;
+  setSearchInput: Dispatch<SetStateAction<string>>;
 }
