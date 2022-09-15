@@ -16,11 +16,11 @@ export default function GridContent({
         className={classNames(
           "grid grid-flow-r gap-4 lg:gap-3",
           "overflow-x-scroll no-scrollbar h-fit overflow-y-hidden",
-          "grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+          "grid-cols-2 md:grid-cols-3 xl:grid-cols-4"
         )}
       >
         {content.map((item, index) => (
-          <GridItem item={item} index={index} />
+          <GridItem key={"grid_item_" + index} item={item} index={index} />
         ))}
       </div>
     </section>

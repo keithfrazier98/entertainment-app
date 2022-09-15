@@ -7,7 +7,7 @@ export default function SearchContent() {
   const { data, searchInput } = useContext(GlobalContext);
   return (
     <GridContent
-      title={`Found ${data.length} results for ${searchInput}`}
+      title={`Found ${data.length} results for ‘${searchInput}’`}
       content={data}
     />
   );

@@ -23,7 +23,7 @@ export default function NavigationBar() {
   ];
 
   const [navigation, dispatch] = useReducer(setActiveTab, initialNav);
-
+  const { searchInput, setSearchInput } = useContext(GlobalContext);
   function setActiveTab(_: INavItem[], selectedTab: INavItem) {
     return initialNav.map((item) => {
       if (item.name === selectedTab.name) {
@@ -35,6 +35,8 @@ export default function NavigationBar() {
   }
 
   function handleClick(item: INavItem) {
+    if (searchInput) setSearchInput("");
+
     dispatch(item);
   }
   return (
@@ -42,7 +44,7 @@ export default function NavigationBar() {
       {/* Sidebar component, swap this element with another sidebar if you like */}
       <div
         className={classNames(
-          "bg-primary-blue-medium rounded-xl",
+          "bg-primary-blue-medium lg:rounded-xl",
           "flex-1 flex min-h-0 py-2 lg:py-6 px-5",
           "flex-row lg:flex-col"
         )}

@@ -19,7 +19,7 @@ import _data from "../utils/data.json";
 export default function useFilterContent(
   filter: FilterFunction = () => true
 ): [IContentData[], Dispatch<SetStateAction<IContentData[]>>] {
-  const { data } = useContext(GlobalContext);
+  const { data, searchInput, setSearchInput } = useContext(GlobalContext);
   const [selection, setSelection] = useState<IContentData[]>([]);
 
   const location = useLocation();
@@ -28,9 +28,10 @@ export default function useFilterContent(
 
   useEffect(() => {
     setSelection([...data.filter(filter)]);
+
     /**
-     * the location in dep array is a workaround for a infinate
-     * render bug when having the filter in the dep array
+     * the location in dep array is a workaround for infinate
+     * render when having the filter function in the dep array
      *
      * useCallback cant work because the conditional in the filter
      * is what needs to trigger a rerender

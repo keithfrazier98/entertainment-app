@@ -44,9 +44,7 @@ export default function RowItem({
       </button>
       <div className="absolute right-5 top-5 z-10 flex justify-between flex-col text-white">
         <div className="w-full flex justify-end rounded-md">
-          <button className="w-8 h-8 bg-black bg-opacity-25 flex justify-center items-center rounded-full">
-            <BookmarkButton item={item} />
-          </button>
+          <BookmarkButton item={item} />
         </div>
       </div>
 
