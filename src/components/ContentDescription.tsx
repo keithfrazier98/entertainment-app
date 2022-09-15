@@ -31,14 +31,14 @@ export default function ContentDescription({
         <div className="w-1 h-1 rounded-full bg-white" />
         <span>{item.rating}</span>
       </div>
-      <h5
+      <p
         className={classNames(
           size === "lg" ? "text-xl" : "text-sm",
           "text-white "
         )}
       >
         {item.title}
-      </h5>
+      </p>
     </>
   );
 }

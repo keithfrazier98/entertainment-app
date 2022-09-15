@@ -10,6 +10,7 @@ export default function App() {
 
   return (
     <div className="flex flex-col lg:flex-row overflow-hidden">
+      <h1 className="sr-only">Entertainment App</h1>
       <Router>
         <Routes>
           <Route path="/login" element={<Login />} />

@@ -54,6 +54,7 @@ export default function NavigationBar() {
       >
         <div className="flex-1 flex lg:flex-col overflow-y-auto items-center py-2">
           <Link to="/" onClick={() => handleClick(navigation[0])}>
+            <p className="sr-only">logo</p>
             <Logo className={classNames("flex-shrink-0 ")} aria-hidden="true" />
           </Link>
           <nav className="flex-1 space-y-1 lg:rounded-xl lg:mt-14 flex lg:flex-col justify-center lg:justify-start">
@@ -64,6 +65,7 @@ export default function NavigationBar() {
                 className="flex items-center justify-center mt-0"
                 onClick={() => handleClick(item)}
               >
+                <p className="sr-only">{item.name}</p>
                 <item.icon
                   className={classNames(
                     index !== navigation.length - 1 ? "mr-5 md:mr-9" : "",
@@ -80,9 +82,12 @@ export default function NavigationBar() {
           </nav>
           <div className="text-xs flex flex-col items-center ">
             <div className="bg-white p-[.1rem] rounded-full w-fit">
-              <img src={avatar} className="w-9 h-9" />
+              <img alt="avatar" src={avatar} className="w-9 h-9" />
             </div>
-            <a href="/login" className="flex mt-2 text-gray-400  hover:text-white">
+            <a
+              href="/login"
+              className="flex mt-2 text-gray-400  hover:text-white"
+            >
               <ArrowLeftOnRectangleIcon className="w-4 h-4" /> Logout
             </a>
           </div>
